@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>
+    javascript
+</title>
+<style>
+    button{
+        background-color: rgb(122, 199, 218);
+    }
+</style>
+</head>
+<body>
+    <button onclick="get()">click me</button><br><br>
+    <button onclick=mun()>multiplication</button>
+    <p id="m"></p>
+    <button onclick=div()>division</button>
+    <p id="d"></p>
+    <button onclick=add()>addition</button>
+    <p id="ad"></p>
+    <button onclick=min()>subtraction</button>
+    <p id="mi"></p>
+    <script>
+        function get(){
+            alert("Welcome To Codingal")
+        }
+        
+        function mun(){
+        var b= 15;
+        var c= 3;
+        document.getElementById("m").innerHTML=b*c;
+        }
+
+        function div(){
+        var b= 27;
+        var c= 3;
+        document.getElementById("d").innerHTML=b/c;
+        }
+        
+        function add(){
+        var b= 74;
+        var c= 17;
+        document.getElementById("ad").innerHTML=b+c;
+        }
+
+        function min(){
+        var b= 24;
+        var c= 12;
+        document.getElementById("mi").innerHTML=b-c;
+        }
+    </script>
+</body>
+</html>
