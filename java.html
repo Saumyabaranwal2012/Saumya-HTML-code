@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>
+    Javascript
+</title>
+</head>
+<body>
+    <p id="fruit"></p>
+    <h2>Javascript</h2>
+    <p>Basic methods</p>
+    <script>
+        var str = "SaUmYa";
+        document.write(str.toUpperCase());
+        document.write("<br>");
+        document.write(str.toLowerCase());
+        document.write("<br>");
+        document.write(str.startsWith('a'));
+        document.write("<br>");
+        var fruits=["Apple","Mango","Guava","Watermelon","Kiwi"];
+        var text="";
+        var i;
+        for(i=0; i<fruits.length; i++){
+            text+= fruits[i]+"<br>";
+        }
+        document.getElementById("fruit").innerHTML=text;
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>
+    Vegetables
+</title>
+</head>
+<body>
+    <h3 id="veg"></h3>
+    <h4 id="Da"></h4>
+    <script>
+        var veggies=["coriander","spinach","lemon","potato","tomato"];
+        var text="";
+        var v;
+        for (v=0; v<veggies.length; v++){
+            text+=veggies[v]+"<br>";
+        }
+        document.getElementById("veg").innerHTML=text;
+
+        var day;
+        switch(new Date().getDay()){
+            case 0:
+              day="SUNDAY";
+              break;
+            case 1:
+              day="MONDAY";
+              break;
+            case 2:
+              day="TUESDAY";
+              break;
+            case 3:
+              day="WEDNESDAY";
+              break;
+            case 4:
+              day="THURSDAY";
+              break;
+            case 5:
+              day="FRIDAY";
+              break;
+            case 6:
+              day="SATURDAY";
+
+        }
+        document.getElementById("Da").innerHTML= "today is " + day;
+    </script>
+</body>
+</html>
