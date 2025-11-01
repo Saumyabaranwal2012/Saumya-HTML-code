@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>
+Objects
+</title>
+</head>
+<body>
+    <p id="result"></p>
+    <p id="per"></p>
+    <script>
+        var person={
+            FirstName: "I",
+            age: 20,
+            place:"Pune",
+            hobby:"cricket",
+        };
+    document.getElementById("per").innerHTML=person.FirstName+ " am " +person.age +" years old and " + person.FirstName +" love playing " + person.hobby +". " + person.FirstName + " live in " + person.place+"." ;
+
+    var value= Math.abs(20);
+    document.write("test value:"  + value + "<br>");
+    var value= Math.acos(-1);
+    document.write("test value:" + value + "<br>");
+    var value= Math.asin(1);
+    document.write("test value:" + value + "<br>");
+    var value= Math.acos(.5);
+    document.write("test value:" + value + "<br>");
+    var value= Math.ceil(3.6);
+    document.write("test value:" + value + "<br>");
+    var value= Math.floor(3.1);
+    document.write("test value:" + value + "<br>");
+
+    function findMax(){
+         var i;
+         var max=0;
+         for(i=0; i< arguments.length; i++){
+            max=arguments[i];
+         }
+         return max
+    }
+    document.getElementById("result").innerHTML=findMax(4,7,9);
+    </script>
+</body>
+</html>
