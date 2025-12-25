@@ -1,0 +1,331 @@
+<html>
+<head>
+  <title>Capstone</title>
+  <style>
+    ul {
+      list-style-type: none; 
+      margin: 0;
+      float:left;
+      padding: 0;
+      height: 50px;
+      overflow: hidden;
+      background-color: rgb(255, 255, 255);
+    }
+    
+    li a {
+      -webkit-text-size-adjust: auto;
+      text-align: center;
+      height: 50px;
+      float: left;
+      display: block;
+      color: rgb(0, 0, 0);
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: rgb(255, 255, 255);
+      color: rgb(28, 219, 21);
+    }
+
+    li a.active {
+      background-color: rgb(81, 182, 94);
+      color: white;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Slider Styles */
+    .slider {
+      width: 100vw;
+      height: 50vh; /* HALF of screen height */
+      position: relative;
+      overflow: hidden;
+      background: #000; /* optional: for empty space */
+      margin-bottom: 30px; /* Space between slider and card */
+    }
+
+    .slides {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* ensures full image is visible */
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      background: #000; /* optional: background behind smaller images */
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .navigation {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+
+    .navigation span {
+      cursor: pointer;
+      font-size: 2rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px;
+      border-radius: 50%;
+      user-select: none;
+      transition: background 0.3s;
+    }
+
+    .navigation span:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Card Styles */
+    
+    .card-container {
+      width: 300px;
+      height: 400px;
+      perspective: 1000px; 
+      cursor: pointer;
+      margin: 0 auto;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s; 
+      transform-style: preserve-3d; 
+    }
+
+    .card-container:hover .card {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.822);
+      border-radius: 10px;
+    }
+    
+    .card-front {
+      background-color: #1e9413;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card-back {
+      background-color: #11a50c;
+      color: #fdfdfd;
+      padding: 20px;
+      text-align: center;
+      transform: rotateY(180deg); 
+    }
+    
+    .card-containera {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 0; 
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s; 
+  transform-style: preserve-3d; 
+}
+
+.card-containera:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.87);
+  border-radius: 10px;
+}
+
+.card-front {
+  background-color: #0c8a12;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-back {
+  background-color: #0c8025;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  transform: rotateY(180deg); 
+}
+
+.card-back h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-back p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li {
+      list-style-type: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+      <ul id="Navigation">
+          <li><a class="active" href="capstone.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contacts.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+      </ul>
+  </nav>
+  
+  <!-- Slider Section -->
+  <div class="slider">
+    <div class="slides">
+      <img src="wildlife.jpg" class="slide active">
+      <img src="wild.jpg" class="slide">
+      <img src="life.jpg" class="slide">
+      <img src="lifee.jpg" class="slide">
+      <img src="wil.jpg" class="slide">
+    </div>
+
+    <div class="navigation">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+  </div>
+
+  <!-- Card Section -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front">
+        <img src="rescued-rusty-spotted-cat-Akash.jpg" alt="Placeholder photo">
+      </div>
+      <div class="card-back">
+        <u><h1>Rusty-Spotted Cat</h1></u>
+        <u><b>Also called as "hummingbird of the cat family"</b></u><p>It is the smallest wild cat species in the world and is native to India, Sri Lanka and Nepal. It is known its diminutive size, distinctive coat and elusive, noctural nature.
+          The species is listed as near threatened due habitat loss, fragmentation and occasional hunting or conflict with humans.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-containera">
+    <div class="card">
+      <div class="card-front">
+        <img src="red.jpg" alt="placeholder photo">
+      </div>
+      <div class="card-back">
+        <u><h1>Red Panda</h1>
+        <b>Also called as the "lesser panda" "red bear-cat" or "fire fox"
+        </b></u>
+        <p>The red panda is a small, cat-sized mammal with reddish-brown fur, black belly, and a long, bushy ringed tail, native to the Eastern Himalayas and southwestern China, known for its arboreal skills, primarily eating bamboo, and classified as Endangered due to habitat loss. They are solitary, most active at dawn/dusk (crepuscular), use an extra "thumb" (extended wrist bone) for climbing, and their tail for balance and warmth, despite being in the order Carnivora, they are mostly herbivorous. 
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front">
+        <img src="jawara-in-day-Lenu.jpg" alt="Image 3">
+      </div>
+      <div class="card-back">
+        <u><h1>Amur Tiger</h1>
+        <b>(Panthera tigris altaica), also known as the Siberian tiger</b></u>
+        <p>Currently classified as Endangered by the IUCN Red List. Primarily found in the Russian Far East and Northeast China, these endangered apex predators are adapted to cold climates with thick fur, pale orange coats, and large, padded paws. The species was on the brink of extinction in the 1940s, with fewer than 50 individuals remaining in the wild, but conservation efforts have helped its population recover to approximately 500-600 individuals today. </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[i].classList.add('active');
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    });
+
+    // Auto slide every 4 seconds
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 4000);
+  </script>
+</body>
+</html>
