@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>About us</title>
+</head>
+<style>
+  ul{
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    height:50px;
+    overflow: hidden;
+    background-color:rgb(255, 255, 255);
+  }
+  
+li a {
+  -webkit-text-size-adjust:auto;
+  text-align: center;
+  height:50px;
+  float:left;
+  display: block;
+  color: rgb(0, 0, 0);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:rgb(255, 255, 255);
+  color: rgb(28, 219, 21);
+}
+
+li a.active{
+    background-color:rgb(81, 182, 94);
+    color:white;
+}
+
+
+body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 1.5em;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-top: 20px;
+        }
+        .section-content {
+            font-size: 1em;
+            margin-top: 10px;
+            color: #555;
+        }
+        .mission-section .section-title {
+            color: #28a745;
+            border-color: #28a745;
+        }
+    
+
+    body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport */
+            display: flex;
+            flex-direction: column; /* Stacks children vertically */
+        }
+
+        .content {
+            flex-grow: 1; 
+            padding: 20px;
+        }
+
+        /* Footer styling */
+        .site-footer {
+            background-color: #333; /* Dark background */
+            color: #fff; /* White text */
+            text-align: center; /* Center the text */
+            padding: 15px 0; /* Some padding top and bottom */
+            font-size: 0.9rem; /* Slightly smaller text */
+            width: 100%; /* Ensure it spans the full width */
+            /* Positioning is handled by the body/content flexbox above */
+        }
+</style>
+<body>
+  <nav>
+      <ul id="Navigation">
+          <li><a href="capstone.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contacts.html">Contact Us</a></li>
+          <li><a class="active" href="about.html">About Us</a></li>
+      </ul>
+  </nav>
+
+  <div class="container">
+        <div class="vision-section">
+            <h2 class="section-title">OUR VISION</h2>
+            <p class="section-content">To be Earth's living library, where wild stories echo, guiding humanity to restore balance, ensuring every creature's right to thrive in a world we co_create with nature.</p>
+        </div>
+
+        <div class="mission-section">
+            <h2 class="section-title">OUR MISSION</h2>
+            <p class="section-content">To be the unwavering voice and fierce protectors for the voicless, ensuring every species has a fighting chance, bridging the gap between humanity and wildlife along with protecting nature's original blueprints to ensure a future worth celebrating and mending the broken web of life, one habitat at a time.</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Your main page content goes here -->
+    </div>
+
+    <!-- Footer HTML structure -->
+    <footer class="site-footer">
+        <p>&copy; 2025 Whisper in the wild. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

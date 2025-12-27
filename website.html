@@ -18,7 +18,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #4ecdc4, #3a9b8b); /* Gradient Background */
+            background: linear-gradient(135deg, #4f83cc, #006b8f); /* Blue Gradient Background */
             text-align: center;
             padding: 80px 20px;
             font-size: 42px;
@@ -26,12 +26,13 @@
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 2px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border-bottom: 10px solid #006b8f; /* Strong border for emphasis */
         }
 
         /* Section Title and Description */
         .section {
-            background-color: #f7f8fa; /* Very light gray */
+            background-color: #f0f4f8; /* Light gray for contrast */
             color: #333;
             padding: 80px 20px;
             text-align: center;
@@ -39,15 +40,15 @@
         }
 
         .section h2 {
-            font-size: 42px;
+            font-size: 48px;
             margin-bottom: 20px;
             font-weight: 700;
-            color: #4ecdc4;
+            color: #006b8f; /* Blue color */
             transition: color 0.3s ease;
         }
 
         .section h2:hover {
-            color: #3a9b8b;
+            color: #4f83cc; /* Lighter blue on hover */
         }
 
         .section p {
@@ -57,6 +58,7 @@
             line-height: 1.7;
             color: #555;
             margin-top: 20px;
+            letter-spacing: 0.5px;
         }
 
         /* Image Section with Text Overlay */
@@ -88,7 +90,8 @@
             font-size: 48px;
             font-weight: 700;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 2px;
         }
 
         /* Content Section with Images and Text */
@@ -109,13 +112,14 @@
             flex-wrap: wrap;
             animation: fadeIn 1.2s ease-in-out;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             padding: 20px;
             background-color: #fff;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
         .content-item:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
             transform: translateY(-5px);
         }
 
@@ -127,7 +131,7 @@
         }
 
         .content-item img:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .content-item .text {
@@ -140,14 +144,14 @@
 
         .content-item h3 {
             font-size: 26px;
-            color: #4ecdc4;
+            color: #006b8f; /* Blue color */
             margin-bottom: 15px;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .content-item h3:hover {
-            color: #3a9b8b;
+            color: #4f83cc; /* Lighter blue on hover */
         }
 
         /* Footer */
@@ -161,7 +165,7 @@
         }
 
         footer a {
-            color: #4ecdc4;
+            color: #006b8f;
             text-decoration: none;
             font-weight: 600;
         }
@@ -269,7 +273,7 @@
                 <h3>French Fries</h3>
                 <p>French fries are a popular snack made from potatoes, cut into strips and fried until golden and crispy. They’re often served with sauces like ketchup or mayo and are a perfect side dish for burgers and sandwiches. Whether thin or thick, French fries are a timeless favorite worldwide.</p>
             </div>
-            <img src="fries.jpg" alt="Burgers">
+            <img src="fries.jpg" alt="French Fries">
         </div>
     </section>
 

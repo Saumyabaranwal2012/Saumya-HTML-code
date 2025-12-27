@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fa;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* NAVIGATION BAR */
+    #Navigation {
+        list-style: none;
+        display: flex;
+        justify-content: flex-start; /* LEFT aligned */
+        align-items: center;
+        background-color: #fff;
+        height: 50px;
+        padding-left: 20px; /* space from left edge */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #Navigation li {
+        margin-right: 20px;
+        flex: 0 0 auto; /* prevents resizing */
+    }
+
+    #Navigation li a {
+        display: block;
+        padding: 10px 16px;
+        text-decoration: none;
+        color: #000;
+        font-size: 16px;
+        white-space: nowrap; /* prevents wrapping */
+    }
+
+    #Navigation li a:hover {
+        color: rgb(28, 219, 21);
+    }
+
+    #Navigation li a.active {
+        background-color: rgb(81, 182, 94);
+        color: white;
+        border-radius: 4px;
+    }
+
+    /* FORM */
+    .form-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        margin: 40px auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 0.3rem;
+    }
+
+    input, textarea {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 1rem;
+        background-color: #0b8f32;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #00b345;
+    }
+
+    /* FOOTER */
+    .site-footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+      <ul id="Navigation">
+          <li><a href="capstone.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a class="active" href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+      </ul>
+  </nav>
+
+  <!-- Contact Form Section -->
+  <div class="form-container">
+        <h1>Contact Us</h1>
+        <form action="/submit" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Enter your message here"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+      <p>&copy; 2025 Whisper in the Wild. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

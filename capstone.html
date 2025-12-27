@@ -1,6 +1,9 @@
 <html>
 <head>
   <title>Capstone</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Footer Example</title>
   <style>
     ul {
       list-style-type: none; 
@@ -46,7 +49,7 @@
     /* Slider Styles */
     .slider {
       width: 100vw;
-      height: 50vh; /* HALF of screen height */
+      height:100vh; /* HALF of screen height */
       position: relative;
       overflow: hidden;
       background: #000; /* optional: for empty space */
@@ -62,7 +65,7 @@
     .slide {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* ensures full image is visible */
+      object-fit:cover; /* ensures full image is visible */
       position: absolute;
       top: 0;
       left: 0;
@@ -101,119 +104,116 @@
     }
 
     /* Card Styles */
-    
-    .card-container {
-      width: 300px;
-      height: 400px;
-      perspective: 1000px; 
-      cursor: pointer;
-      margin: 0 auto;
-    }
+    .cards-wrapper {
 
-    .card {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transition: transform 0.6s; 
-      transform-style: preserve-3d; 
-    }
+display: flex;
 
-    .card-container:hover .card {
-      transform: rotateY(180deg);
-    }
+justify-content: center;
 
-    .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.822);
-      border-radius: 10px;
-    }
-    
-    .card-front {
-      background-color: #1e9413;
-    }
+gap: 20px;
 
-    .card-front img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+flex-wrap: wrap; /* Will wrap to next line on smaller screens */
 
-    .card-back {
-      background-color: #11a50c;
-      color: #fdfdfd;
-      padding: 20px;
-      text-align: center;
-      transform: rotateY(180deg); 
-    }
-    
-    .card-containera {
-  width: 300px;
-  height: 400px;
-  perspective: 1000px;
-  cursor: pointer;
-  margin: 0; 
+margin-bottom: 50px;
+
+}
+
+.card-container {
+
+width: 300px;
+
+height: 400px;
+
+perspective: 1000px;
+
+cursor: pointer;
+
 }
 
 .card {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 0.6s; 
-  transform-style: preserve-3d; 
+
+width: 100%;
+
+height: 100%;
+
+position: relative;
+
+transition: transform 0.6s;
+
+transform-style: preserve-3d;
+
 }
 
-.card-containera:hover .card {
-  transform: rotateY(180deg);
+.card-container:hover .card {
+
+transform: rotateY(180deg);
+
 }
 
 .card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.87);
-  border-radius: 10px;
-}
 
-.card-front {
-  background-color: #0c8a12;
+position: absolute;
+
+width: 100%;
+
+height: 100%;
+
+backface-visibility: hidden;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-direction: column;
+
+border-radius: 10px;
+
+box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+
 }
 
 .card-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+
+width: 100%;
+
+height: 100%;
+
+object-fit: cover;
+
+border-radius: 10px;
+
 }
 
 .card-back {
-  background-color: #0c8025;
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  transform: rotateY(180deg); 
+
+background-color: #0c8025;
+
+color: #fff;
+
+text-align: center;
+
+padding: 20px;
+
+transform: rotateY(180deg);
+
 }
 
 .card-back h1 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+
+font-size: 1.5rem;
+
+margin-bottom: 10px;
+
 }
 
 .card-back p {
-  font-size: 1rem;
-  color: #ffffff;
+
+font-size: 1rem;
+
+color: #fff;
+
 }
 
     nav ul {
@@ -230,6 +230,31 @@
       text-decoration: none;
       color: rgb(0, 0, 0);
     }
+
+    body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport */
+            display: flex;
+            flex-direction: column; /* Stacks children vertically */
+        }
+
+        .content {
+            flex-grow: 1; 
+            padding: 20px;
+        }
+
+        /* Footer styling */
+        .site-footer {
+            background-color: #333; /* Dark background */
+            color: #fff; /* White text */
+            text-align: center; /* Center the text */
+            padding: 15px 0; /* Some padding top and bottom */
+            font-size: 0.9rem; /* Slightly smaller text */
+            width: 100%; /* Ensure it spans the full width */
+            /* Positioning is handled by the body/content flexbox above */
+        }
   </style>
 </head>
 <body>
@@ -246,11 +271,19 @@
   <!-- Slider Section -->
   <div class="slider">
     <div class="slides">
-      <img src="wildlife.jpg" class="slide active">
-      <img src="wild.jpg" class="slide">
-      <img src="life.jpg" class="slide">
-      <img src="lifee.jpg" class="slide">
-      <img src="wil.jpg" class="slide">
+      <img src="girl.jpg" class="slide active">
+      <img src="noo.jpg" class="slide">
+      <img src="cam.jpg" class="slide">
+      <img src="leopard.jpg" class="slide">
+      <img src="zebra.jpg" class="slide">
+      <img src="bird.jpg" class="slide">
+      <img src="land.jpg" class="slide">
+      <img src="leo.jpg" class="slide">
+      <img src="cubs.jpg" class="slide">
+      <img src="owl.jpg" class="slide">
+      <img src="ami.jpg" class="slide">
+      <img src="lion.jpg" class="slide">
+      <img src="place.jpg" class="slide">
     </div>
 
     <div class="navigation">
@@ -260,48 +293,105 @@
   </div>
 
   <!-- Card Section -->
-  <div class="card-container">
-    <div class="card">
-      <div class="card-front">
-        <img src="rescued-rusty-spotted-cat-Akash.jpg" alt="Placeholder photo">
-      </div>
-      <div class="card-back">
-        <u><h1>Rusty-Spotted Cat</h1></u>
-        <u><b>Also called as "hummingbird of the cat family"</b></u><p>It is the smallest wild cat species in the world and is native to India, Sri Lanka and Nepal. It is known its diminutive size, distinctive coat and elusive, noctural nature.
-          The species is listed as near threatened due habitat loss, fragmentation and occasional hunting or conflict with humans.
-        </p>
-      </div>
-    </div>
-  </div>
+   <center><h3>Some Endangered Species</h3></center>
+  <br><br>
+   <div class="cards-wrapper">
 
-  <div class="card-containera">
-    <div class="card">
-      <div class="card-front">
-        <img src="red.jpg" alt="placeholder photo">
-      </div>
-      <div class="card-back">
-        <u><h1>Red Panda</h1>
-        <b>Also called as the "lesser panda" "red bear-cat" or "fire fox"
-        </b></u>
-        <p>The red panda is a small, cat-sized mammal with reddish-brown fur, black belly, and a long, bushy ringed tail, native to the Eastern Himalayas and southwestern China, known for its arboreal skills, primarily eating bamboo, and classified as Endangered due to habitat loss. They are solitary, most active at dawn/dusk (crepuscular), use an extra "thumb" (extended wrist bone) for climbing, and their tail for balance and warmth, despite being in the order Carnivora, they are mostly herbivorous. 
-        </p>
-      </div>
-    </div>
-  </div>
+<div class="card-container">
 
-  <!-- Card 3 -->
-  <div class="card-container">
-    <div class="card">
-      <div class="card-front">
-        <img src="jawara-in-day-Lenu.jpg" alt="Image 3">
-      </div>
-      <div class="card-back">
-        <u><h1>Amur Tiger</h1>
-        <b>(Panthera tigris altaica), also known as the Siberian tiger</b></u>
-        <p>Currently classified as Endangered by the IUCN Red List. Primarily found in the Russian Far East and Northeast China, these endangered apex predators are adapted to cold climates with thick fur, pale orange coats, and large, padded paws. The species was on the brink of extinction in the 1940s, with fewer than 50 individuals remaining in the wild, but conservation efforts have helped its population recover to approximately 500-600 individuals today. </p>
-      </div>
-    </div>
-  </div>
+<div class="card">
+
+<div class="card-front">
+
+<img src="rescued-rusty-spotted-cat-Akash.jpg" alt="Rusty-Spotted Cat">
+
+</div>
+
+<div class="card-back">
+
+<u><h1>Rusty-Spotted Cat</h1>
+
+<b>Also called "hummingbird of the cat family"</b></u>
+
+<p>It is the smallest wild cat species in the world and is native to India, Sri Lanka and Nepal. It is known its diminutive size, distinctive coat and elusive, noctural nature.
+          The species is listed as near threatened due habitat loss, fragmentation and occasional hunting or conflict with humans.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card-container">
+
+<div class="card">
+
+<div class="card-front">
+
+<img src="red.jpg" alt="Red Panda">
+
+</div>
+
+<div class="card-back">
+
+<u><h1>Red Panda</h1>
+
+<b>Also called "lesser panda""red bear-cat" or "fire fox"</b></u>
+
+<p>The red panda is a small, cat-sized mammal with reddish-brown fur and a ringed tail, native to the Eastern Himalayas and southwestern China. Primarily herbivorous, they mainly eat bamboo and are classified as Endangered due to habitat loss. They are solitary, crepuscular, and use an extra "thumb" for climbing and their tail for balance.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card-container">
+
+<div class="card">
+
+<div class="card-front">
+
+<img src="jawara-in-day-Lenu.jpg" alt="Amur Tiger">
+
+</div>
+
+<div class="card-back">
+
+<u><h1>Amur Tiger</h1>
+
+<b>Also called as(Panthera tigris altaica)the Siberian tiger</b></u>
+
+<p>Classified as Endangered by the IUCN Red List, these apex predators are found in the Russian Far East and Northeast China. Adapted to cold climates, they have thick fur, pale orange coats, and large paws. Once near extinction in the 1940s with fewer than 50 individuals, conservation efforts have helped their population grow to around 500-600 today.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card-container">
+
+<div class="card">
+
+<div class="card-front">
+
+<img src="Blue-throated Mac.jpg" alt="image 3">
+
+</div>
+
+<div class="card-back">
+
+<u><h1>Blue-throated Macaw</h1>
+
+<b>Also called "Glaucous Macaw"</b></u>
+
+<p>The critically endangered Blue-throated Macaw, native to Bolivia's Beni savannas, has a turquoise-blue head, yellow chest, and blue throat feathers. These long-lived birds nest in palm cavities and feed on fruits, seeds, and nuts. They're threatened by habitat loss, dam flooding, and the illegal pet trade. Conservation efforts focus on protecting their habitat and reducing poaching.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
   <script>
     let slides = document.querySelectorAll('.slide');
     let index = 0;
@@ -327,5 +417,14 @@
       showSlide(index);
     }, 4000);
   </script>
+
+  <div class="content">
+        <!-- Your main page content goes here -->
+    </div>
+
+    <!-- Footer HTML structure -->
+    <footer class="site-footer">
+        <p>&copy; 2025 Whisper in the wild. All rights reserved.</p>
+    </footer>
 </body>
 </html>

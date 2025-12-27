@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>Gallery</title>
+</head>
+<style>
+  <style>
+.table-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        /* Optional: Add a border to see the new boundaries */
+        border: 1px solid #ccc; 
+    }
+    td {
+        padding: 5px; /* Add some space between images */
+        text-align: center;
+        vertical-align: middle;
+    }
+    table {
+        border-collapse: collapse; /* Optional: Makes the table borders look cleaner */
+    }
+.table-img {
+  width: 300px;  
+  height: 300px; 
+  object-fit: cover; 
+}
+  ul{
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    height:50px;
+    overflow: hidden;
+    background-color:rgb(255, 255, 255);
+  }
+  
+li a {
+  -webkit-text-size-adjust:auto;
+  text-align: center;
+  height:50px;
+  float:left;
+  display: block;
+  color: rgb(0, 0, 0);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:rgb(255, 255, 255);
+  color: rgb(28, 219, 21);
+}
+
+li a.active{
+    background-color:rgb(81, 182, 94);
+    color:white;
+}
+
+body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport */
+            display: flex;
+            flex-direction: column; /* Stacks children vertically */
+        }
+
+        .content {
+            flex-grow: 1; 
+            padding: 20px;
+        }
+
+        /* Footer styling */
+        .site-footer {
+            background-color: #333; /* Dark background */
+            color: #fff; /* White text */
+            text-align: center; /* Center the text */
+            padding: 15px 0; /* Some padding top and bottom */
+            font-size: 0.9rem; /* Slightly smaller text */
+            width: 100%; /* Ensure it spans the full width */
+            /* Positioning is handled by the body/content flexbox above */
+        }
+
+</style>
+<body>
+  <nav>
+      <ul id="Navigation">
+          <li><a href="capstone.html">Home</a></li>
+          <li><a class="active" href="gallery.html">Gallery</a></li>
+          <li><a href="contacts.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+      </ul>
+  </nav>
+
+  <center><h2>Animals And Wildlife</h2></center>
+  <table>
+    
+     <tr>
+        <td><img src="leo.jpg"</td>
+        <td><img src="leopard.jpg"</td>
+       
+        </tr>
+    <tr>
+        <td><img src="owl.jpg"</td>
+        <td><img src="lion.jpg"</td>
+        </tr>
+    <tr>
+        <td><img src="land.jpg"</td>
+        <td><img src="bird.jpg"</td>
+        
+        </tr>
+    <tr>
+        <td><img src="zebra.jpg"</td>
+        <td><img src="cam.jpg"</td>
+        </tr>
+    <tr>
+        <td><img src="cubs.jpg"</td>
+        <td><img src="nooo.jpg"</td>
+    </tr>
+    <tr>
+      <td><img src="place.jpg"</td>
+      <td><img src="no.jpg"</td>
+    </tr>
+    <tr>
+      <td><img src="ee.jpg"</td>
+      <td><img src="e.jpg"</td>
+    </tr>
+    <tr>
+      <td><img src="oo.jpg"</td>
+      <td><img src="o.jpg"</td>
+    </tr>
+    <tr>
+      <td><img src="n.jpg"</td>
+      <td><img src="oe.jpg"</td>
+    </tr>
+  </table>
+
+  <div class="content">
+        <!-- Your main page content goes here -->
+    </div>
+
+    <!-- Footer HTML structure -->
+    <footer class="site-footer">
+        <p>&copy; 2025 Whisper in the wild. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
