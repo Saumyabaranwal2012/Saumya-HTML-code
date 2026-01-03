@@ -1,0 +1,5 @@
+print("Hello World")
+print("My name is Saumya")
+print("My favourite subject is science")
+print("My favourite sports are cricket and basketball")
+print("The reult of 3+5",3+5)
