@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary Match Game (Hindi, English, Arabic)</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  h1 { color: #333; }
+  .game-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  .word-box, .match-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .word {
+    padding: 15px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: grab;
+    width: 140px;
+    text-align: center;
+  }
+  .word[dir="rtl"] { text-align: right; }
+  .match-box {
+    width: 200px;
+    height: 80px;
+    border: 2px solid #ccc;
+    margin: 20px;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  #result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover { background-color: #45a049; }
+</style>
+</head>
+<body>
+<h1>Vocabulary Match Game</h1>
+<p>Drag and drop the words into the correct matching box!</p>
+
+<div class="game-container">
+  <div class="word-box" id="wordBox"></div>
+  <div class="match-boxes" id="matchBoxes"></div>
+</div>
+
+<div id="result">
+  <p>Score: <span id="score">0</span></p>
+  <p>Level: <span id="level">1</span></p>
+</div>
+
+<button id="nextLevelButton" onclick="nextLevel()" style="display:none;">Next Level</button>
+
+<script>
+let score = 0;
+let level = 1;
+let words = [];
+let matchedWords = 0;
+
+const wordsData = {
+  1: [
+    { word: "नमस्ते", translation: "Hello", language: "Hindi" },
+    { word: "Hello", translation: "नमस्ते", language: "English" },
+    { word: "السلام عليكم", translation: "Hello", language: "Arabic" }
+  ],
+  2: [
+    { word: "नमस्ते", translation: "Hello", language: "Hindi" },
+    { word: "Hello", translation: "नमस्ते", language: "English" },
+    { word: "السلام عليكم", translation: "Hello", language: "Arabic" },
+    { word: "पानी", translation: "Water", language: "Hindi" },
+    { word: "Water", translation: "पानी", language: "English" }
+  ],
+  3: [
+    { word: "नमस्ते", translation: "Hello", language: "Hindi" },
+    { word: "Hello", translation: "नमस्ते", language: "English" },
+    { word: "السلام عليكم", translation: "Hello", language: "Arabic" },
+    { word: "पानी", translation: "Water", language: "Hindi" },
+    { word: "Water", translation: "पानी", language: "English" },
+    { word: "كتاب", translation: "Book", language: "Arabic" },
+    { word: "Book", translation: "كتاب", language: "English" }
+  ]
+};
+
+function startGame() {
+  score = 0;
+  matchedWords = 0;
+  document.getElementById("score").innerText = score;
+  document.getElementById("level").innerText = level;
+  document.getElementById("nextLevelButton").style.display = "none";
+  loadLevel();
+}
+
+function loadLevel() {
+  words = wordsData[level];
+  const wordBox = document.getElementById("wordBox");
+  const matchBoxes = document.getElementById("matchBoxes");
+  wordBox.innerHTML = '';
+  matchBoxes.innerHTML = '';
+
+  words.forEach((item,index) => {
+    const wordDiv = document.createElement("div");
+    wordDiv.className = "word";
+    wordDiv.id = "word"+index;
+    wordDiv.innerText = item.word;
+    wordDiv.draggable = true;
+    if(item.language==="Arabic") wordDiv.setAttribute("dir","rtl");
+    wordDiv.addEventListener("dragstart", drag);
+    wordBox.appendChild(wordDiv);
+
+    const matchBoxDiv = document.createElement("div");
+    matchBoxDiv.className = "match-box";
+    matchBoxDiv.id = "match"+index;
+    matchBoxDiv.innerHTML = `<span>${item.translation}</span>`;
+    matchBoxDiv.addEventListener("dragover", allowDrop);
+    matchBoxDiv.addEventListener("drop", drop);
+    matchBoxes.appendChild(matchBoxDiv);
+  });
+}
+
+function allowDrop(ev){ ev.preventDefault(); }
+
+function drag(ev){ ev.dataTransfer.setData("text", ev.target.id); }
+
+function drop(ev){
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const draggedElement = document.getElementById(data);
+  const dropTarget = ev.target.closest('.match-box');
+
+  const correctWord = words.find(item => item.translation === dropTarget.querySelector('span').textContent);
+
+  if(draggedElement.innerText === correctWord.word){
+    dropTarget.appendChild(draggedElement);
+    score++;
+    matchedWords++;
+    document.getElementById("score").innerText = score;
+
+    if(matchedWords===words.length){
+      document.getElementById("nextLevelButton").style.display = "inline-block";
+    }
+  } else { alert("Try again!"); }
+}
+
+function nextLevel(){
+  level++;
+  if(level > Object.keys(wordsData).length){
+    alert("Congratulations! You completed all levels!");
+    return;
+  }
+  startGame();
+}
+
+startGame();
+</script>
+</body>
+</html>
