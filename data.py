@@ -42,6 +42,7 @@ weight=int(weight)
 print(weight)
 print("Data type of weight is:",type(weight))
 
+
 #input a word
 text=str(input("Enter a string:"))
 
